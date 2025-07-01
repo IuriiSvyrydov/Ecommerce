@@ -1,0 +1,36 @@
+﻿[
+  {
+    "Id":"63ca5eb212c124nb533qaa55",
+    "Name": "Adidas Quick Force Indoor Badminton Shoes",
+    "Description":"Adidas Quick Force Indoor Badminton Shoes",
+    "Price":1000,
+    "imageFile":"images/products/1.jpg",
+    "Summary":"Adidas Quick Force Indoor Badminton Shoes",
+    "Types":{
+       "Id": "12ca5eb212c124nb567sae56",
+       "Name": "Shoes"
+    },
+    "Brands":{
+       "Id": "63ca5eb212c124nb567qwe45",
+       "Name": "Adidas"
+    }
+   
+  },
+  {
+    "Id":"63ca5eb212c124nb533qbb66",
+    "Name": "Adidas Quick Force Indoor Badminton Shoes",
+    "Description":"Adidas Quick Force Indoor Badminton Shoes",
+    "Price":3500,
+    "imageFile":"images/products/2.jpg",
+    "Summary":"Adidas Quick Force Indoor Badminton Shoes",
+    "Types":{
+        "Id": "39ca5eb212c124nb575qqa00",
+        "Name": "Rockets"
+    },
+    "Brands":{
+       "Id": "63ca5eb212c124nb598qqa45",
+       "Name": "Puma"
+    }
+   
+  }
+]

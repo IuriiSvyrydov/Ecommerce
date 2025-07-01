@@ -1,3 +1,9 @@
+using Asp.Versioning;
+using Caatalog.Application.Extensions;
+using Catalog.Infrastructure.Data;
+using Catalog.Infrastructure.Data.SeedData;
+using Catalog.Infrastructure.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -13,6 +19,17 @@ builder.Services.AddSwaggerGen(c =>
         Version = "v1"
     });
 });
+builder.Services.RegisterRepositories();
+builder.Services.RegisterAutoMapper();
+builder.Services.RegisterMediatr();
+builder.Services.AddScoped<ICatalogContext, CatalogContext>();
+builder.Services.AddApiVersioning(options =>
+{
+    options.DefaultApiVersion = new ApiVersion(1, 0);
+    options.AssumeDefaultVersionWhenUnspecified = true;
+    options.ReportApiVersions = true;
+});
+
 
 var app = builder.Build();
 
@@ -21,7 +38,13 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
 }
+app.UseRouting();
+app.UseEndpoints(endpoint =>
+{
+    endpoint.MapControllers();
+});
 
 app.UseHttpsRedirection();
 
